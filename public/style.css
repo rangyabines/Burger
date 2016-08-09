@@ -1,0 +1,43 @@
+.element {
+  margin-left: 25%;
+  animation-name: stretch;
+  animation-duration: 5.5s; 
+  animation-timing-function: ease-out; 
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(.6);
+    border-radius: 100%;
+  }
+  50% {
+    transform: scale(.7);
+  }
+  100% {
+    transform: scale(.8);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #00bfa5;
+  }
+  50%{
+    background-color: #ffab00; 
+  }
+  100% {
+    background-color: #FF4136;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  animation: pulse 10s infinite;
+}
