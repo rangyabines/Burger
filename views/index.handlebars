@@ -1,11 +1,11 @@
 <div class="container">
   <div class="col-md-4">
-    <h2>Burgers</h2>
+    <h2 id="head">Burgers</h2>
 
       {{#each burgers}}
         {{#unless this.devoured}}
-        <h4>Item #: {{this.id}}
-        {{this.burger_name}}</h4>
+        <h3>Item #: {{this.id}}
+        {{this.burger_name}}</h3>
         <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
         <input type="hidden" name="devoured" value="true">
         <button class="btn-custom" type="submit">DEVOUR IT</button>
@@ -16,19 +16,19 @@
       {{/each}}
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-4" id="form">
     <h2>Add a Burger</h2>
       <form class="create-update-form" action="burgers/create" method="POST">
         <div class="form-group">
           <textarea class="form-control" rows="3" id="bun" name="burger_name"></textarea>
         </div>
-      <button class="btn-custom-2" type="submit">SUBMIT ORDER</button>
+      <button class="btn-custom-2" type="submit" id="btn">ORDER</button>
     </form>
   </div>
 
   <div class="col-md-4">
-    <h2>Devoured Burgers</h2>
-    <ul>
+    <h2 id="head">Devoured Burgers</h2>
+    <ol>
     {{#each burgers}}
       {{#if this.devoured}}
         <li>
@@ -37,6 +37,6 @@
         </li>
       {{/if}}
     {{/each}}
-    </ul>
+    </ol>
   </div>
 </div>
